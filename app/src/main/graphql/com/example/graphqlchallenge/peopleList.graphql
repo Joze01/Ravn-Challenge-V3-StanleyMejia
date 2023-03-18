@@ -4,6 +4,16 @@ query peopleList{
             id
             name
             birthYear
+            gender
+            eyeColor
+            hairColor
+            skinColor
+            homeworld {
+                name
+            }
+            species {
+                name
+            }
         }
     }
 }

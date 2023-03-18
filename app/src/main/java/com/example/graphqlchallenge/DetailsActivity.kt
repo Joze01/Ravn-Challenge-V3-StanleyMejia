@@ -6,22 +6,24 @@ import com.example.graphqlchallenge.databinding.ActivityDetailsBinding
 
 class DetailsActivity : AppCompatActivity() {
     private lateinit var binding: ActivityDetailsBinding
-
     override fun onCreate(savedInstanceState: Bundle?) {
+
+        val name = intent.getStringExtra("name")
+        val birthYear = intent.getStringExtra("birthday")
+        val eyeColor = intent.getStringExtra("eyecolor")
+        val hairColor = intent.getStringExtra("haircolor")
+        val skinColor = intent.getStringExtra("skincolor")
+
+
         super.onCreate(savedInstanceState)
         binding = ActivityDetailsBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        binding.name
-        binding.birthYear
-        binding.eyecolor
-        binding.generalInf
-        binding.hairColor
-        binding.skinColor
-        binding.textView2
-        binding.textView3
-        binding.textView4
-        binding.textView5
+        binding.name.text = name
+        binding.birthYear.text = birthYear
+        binding.eyecolor.text = eyeColor
+        binding.hairColor.text = hairColor
+        binding.skinColor.text = skinColor
     }
 
 }

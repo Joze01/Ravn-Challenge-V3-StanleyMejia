@@ -28,16 +28,16 @@
             tools:text="Name: Name" />
 
         <TextView
-            android:id="@+id/characterBirth"
+            android:id="@+id/gender"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="8dp"
-            android:text="@{character.birth}"
+            android:text="@{character.gender}"
             android:textColor="#828282"
             android:textSize="14sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/characterName"
-            tools:text="BirthYear: BirthYear" />
+            tools:text="Gender: Gender" />
 
         <ImageView
             android:id="@+id/imageView"
@@ -47,6 +47,18 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:srcCompat="@drawable/baseline_arrow_forward_ios_24" />
+
+        <TextView
+            android:id="@+id/planet"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:text="@{character.planet}"
+            android:textColor="#828282"
+            android:textSize="14sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/gender"
+            tools:text="Planet: Planet" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

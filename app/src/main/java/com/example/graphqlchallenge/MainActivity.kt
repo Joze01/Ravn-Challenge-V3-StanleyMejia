@@ -2,9 +2,11 @@ package com.example.graphqlchallenge
 
 import android.content.Intent
 import android.os.Bundle
-import android.widget.Toast
+import android.widget.SearchView
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.view.contains
+import androidx.core.widget.addTextChangedListener
 import androidx.recyclerview.widget.ListAdapter
 import com.example.graphqlchallenge.adapter.PeopleListAdapter
 import com.example.graphqlchallenge.adapter.PeopleViewModel
@@ -30,15 +32,15 @@ class MainActivity : AppCompatActivity() {
         observeLiveData()
         viewModel.queryPeopleList()
 
-        peopleListAdapter.setOnItemClickListener(object : PeopleListAdapter.OnItemClickListener{
+       /* peopleListAdapter.setOnItemClickListener(object : PeopleListAdapter.OnItemClickListener{
             override fun onItemClick(position: Int) {
-                //Toast.makeText(this@MainActivity,"You Clicked this",Toast.LENGTH_SHORT).show()
                 val intent = Intent(this@MainActivity,DetailsActivity::class.java)
+                intent.putExtra("gender",peopleListAdapter.getItemId(position))
                 startActivity(intent)
-                  //  intent.putExtra("name", )
             }
 
-        })
+        })*/
+
     }
 
     private fun observeLiveData() {
