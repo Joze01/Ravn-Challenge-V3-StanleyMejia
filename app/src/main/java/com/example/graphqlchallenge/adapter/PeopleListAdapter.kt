@@ -18,14 +18,6 @@ class PeopleListAdapter(
         override fun areContentsTheSame(oldItem: PeopleListQuery.Person, newItem: PeopleListQuery.Person): Boolean = oldItem == newItem
     }
 
-    /*private lateinit var mlistener : OnItemClickListener
-    interface OnItemClickListener {
-        fun onItemClick(position: Int)
-    }*/
-
-   /* fun setOnItemClickListener(listener: OnItemClickListener){
-        mlistener = listener
-    }*/
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolderList<*> {
         val itemBinding = ItemCharacterBinding.inflate(LayoutInflater.from(parent.context), parent, false)
         return BindViewHolder(itemBinding)
@@ -55,11 +47,5 @@ class PeopleListAdapter(
         }
 
         }
-
-       /*init {
-           itemView.setOnClickListener {
-               listener.onItemClick(adapterPosition)
-           }
-        }*/
 
     }

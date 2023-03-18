@@ -32,15 +32,6 @@ class MainActivity : AppCompatActivity() {
         observeLiveData()
         viewModel.queryPeopleList()
 
-       /* peopleListAdapter.setOnItemClickListener(object : PeopleListAdapter.OnItemClickListener{
-            override fun onItemClick(position: Int) {
-                val intent = Intent(this@MainActivity,DetailsActivity::class.java)
-                intent.putExtra("gender",peopleListAdapter.getItemId(position))
-                startActivity(intent)
-            }
-
-        })*/
-
     }
 
     private fun observeLiveData() {
