@@ -1,15 +1,22 @@
 package com.example.graphqlchallenge
 
-import androidx.appcompat.app.AppCompatActivity
+import android.content.Intent
 import android.os.Bundle
+import android.widget.Toast
 import androidx.activity.viewModels
+import androidx.appcompat.app.AppCompatActivity
+import androidx.recyclerview.widget.ListAdapter
 import com.example.graphqlchallenge.adapter.PeopleListAdapter
 import com.example.graphqlchallenge.adapter.PeopleViewModel
+import com.example.graphqlchallenge.adapter.ViewHolderList
 import com.example.graphqlchallenge.databinding.ActivityMainBinding
+import com.example.graphqlchallenge.databinding.ItemCharacterBinding
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class MainActivity : AppCompatActivity(){
+class MainActivity : AppCompatActivity() {
+
+
     private lateinit var binding: ActivityMainBinding
     private val viewModel: PeopleViewModel by viewModels()
     private val peopleListAdapter = PeopleListAdapter()
@@ -23,6 +30,15 @@ class MainActivity : AppCompatActivity(){
         observeLiveData()
         viewModel.queryPeopleList()
 
+        peopleListAdapter.setOnItemClickListener(object : PeopleListAdapter.OnItemClickListener{
+            override fun onItemClick(position: Int) {
+                //Toast.makeText(this@MainActivity,"You Clicked this",Toast.LENGTH_SHORT).show()
+                val intent = Intent(this@MainActivity,DetailsActivity::class.java)
+                startActivity(intent)
+                  //  intent.putExtra("name", )
+            }
+
+        })
     }
 
     private fun observeLiveData() {
@@ -41,4 +57,4 @@ class MainActivity : AppCompatActivity(){
         }
     }
 
-    }
+}

@@ -6,25 +6,13 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_margin="8dp"
-    app:cardCornerRadius="8dp">
+    app:cardCornerRadius="10sp">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:padding="8dp">
 
-        <TextView
-            android:id="@+id/characterId"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="8dp"
-            android:text="@{character.id}"
-            android:textSize="18sp"
-            android:textStyle="bold"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:text="ID: #1" />
 
         <TextView
             android:id="@+id/characterName"
@@ -32,12 +20,33 @@
             android:layout_height="wrap_content"
             android:layout_margin="8dp"
             android:text="@{character.name}"
+            android:textColor="#333333"
             android:textSize="18sp"
             android:textStyle="bold"
-            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/characterId"
+            app:layout_constraintTop_toTopOf="parent"
             tools:text="Name: Name" />
+
+        <TextView
+            android:id="@+id/characterBirth"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:text="@{character.birth}"
+            android:textColor="#828282"
+            android:textSize="14sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/characterName"
+            tools:text="BirthYear: BirthYear" />
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/baseline_arrow_forward_ios_24" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

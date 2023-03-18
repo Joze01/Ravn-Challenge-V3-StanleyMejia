@@ -1,5 +1,6 @@
 package com.example.graphqlchallenge.adapter
 
+
 import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
@@ -13,6 +14,7 @@ import com.example.graphqlchallenge.repository.PeopleRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
 import javax.inject.Inject
+
 
 
 @HiltViewModel
