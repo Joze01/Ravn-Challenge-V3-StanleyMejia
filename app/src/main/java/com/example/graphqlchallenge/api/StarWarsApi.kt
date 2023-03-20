@@ -11,6 +11,7 @@ class StarWarsApi {
         }
 
         val okHttpClient = OkHttpClient.Builder().build()
+        // TODO: hard code strings should be in constants
         return ApolloClient.builder()
             .serverUrl("https://swapi-graphql.netlify.app/.netlify/functions/index")
             .okHttpClient(okHttpClient)

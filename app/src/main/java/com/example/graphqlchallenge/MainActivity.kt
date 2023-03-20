@@ -40,7 +40,7 @@ class MainActivity : AppCompatActivity() {
                 is ViewStates.Success -> {
                     if (response.value?.data?.allPeople?.people?.size == 0) {
                         peopleListAdapter.submitList(emptyList())
-                        return@observe
+                        return@observe //TODO: do you relly need this return here?
                     }
                     val results = response.value?.data?.allPeople?.people
                     peopleListAdapter.submitList(results)

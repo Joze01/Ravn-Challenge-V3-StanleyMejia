@@ -11,7 +11,7 @@ import dagger.hilt.android.scopes.ViewModelScoped
 
 @Module
 @InstallIn(ViewModelComponent::class)
-
+// TODO: is this module in use?
 abstract class ViewModelModule {
     @Binds
     @ViewModelScoped

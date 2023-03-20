@@ -10,6 +10,7 @@ import com.example.graphqlchallenge.DetailsActivity
 import com.example.graphqlchallenge.PeopleListQuery
 import com.example.graphqlchallenge.databinding.ItemCharacterBinding
 
+// TODO: do you really need to use ViewHolderList to be * (any of one type) ?
 class PeopleListAdapter(
 ): ListAdapter<PeopleListQuery.Person,ViewHolderList<*>>(DiffUtilCallback)  {
 
@@ -33,10 +34,12 @@ class PeopleListAdapter(
 
         override fun bind(item: PeopleListQuery.Person, position: Int) = with(binding) {
             characterName.text = item.name
+            // TODO: null safety is broken in this following lane
             planet.text = item.homeworld!!.name
             gender.text = item.gender
             binding.root.setOnClickListener {
                 val intent = Intent(binding.root.context, DetailsActivity::class.java)
+                // TODO: intents key should be constants
                 intent.putExtra("name", item.name)
                 intent.putExtra("eyecolor", item.eyeColor)
                 intent.putExtra("haircolor", item.hairColor)

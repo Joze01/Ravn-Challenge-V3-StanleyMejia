@@ -32,6 +32,7 @@ class PeopleViewModel @Inject constructor(
             val response = repository.getPeople()
             _peopleList.postValue(ViewStates.Success(response))
         }
+        //TODO: hard code strings should be in constants.
         catch (e:ApolloException){
             Log.d("ApolloException", "Failure", e)
             _peopleList.postValue(ViewStates.Error("Error Fetching Characters"))

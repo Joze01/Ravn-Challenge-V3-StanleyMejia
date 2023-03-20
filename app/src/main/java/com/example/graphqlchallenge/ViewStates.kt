@@ -1,5 +1,7 @@
 package com.example.graphqlchallenge
 
+
+// TODO: great ussage of viewstates.
 sealed class ViewStates<T>(
     val value: T? = null,
     val message: String? = null
@@ -8,3 +10,4 @@ sealed class ViewStates<T>(
     class Error<T>(message: String?, data: T? = null) : ViewStates<T>(data, message)
     class Loading<T> : ViewStates<T>()
 }
+

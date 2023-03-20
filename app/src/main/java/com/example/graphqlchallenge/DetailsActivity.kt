@@ -8,6 +8,7 @@ class DetailsActivity : AppCompatActivity() {
     private lateinit var binding: ActivityDetailsBinding
     override fun onCreate(savedInstanceState: Bundle?) {
 
+        // TODO: all the keys should in  companion object constants
         val name = intent.getStringExtra("name")
         val birthYear = intent.getStringExtra("birthday")
         val eyeColor = intent.getStringExtra("eyecolor")
